@@ -1,16 +1,5 @@
 /*
  Publishing in the callback 
- 
-  - connects to an MQTT server
-  - subscribes to the topic "inTopic"
-  - when a message is received, republishes it to "outTopic"
-  
-  This example shows how to publish messages within the
-  callback function. The callback function header needs to
-  be declared before the PubSubClient constructor and the 
-  actual callback defined afterwards.
-  This ensures the client reference in the callback function
-  is valid.
   
 */
 
@@ -99,7 +88,6 @@ char* command = charBuf;
     char* separator = strchr(command, ':');
     if (separator != 0)
     {
-        // Actually split the string in 2: replace ':' with 0
         *separator = 0;
         int servoId = atoi(command);
         ++separator;
@@ -117,8 +105,6 @@ dtostrf(position1,5,2,alto);
        delay(b);
        
     }
-    // Find the next command in input string
-  //  command = strtok(0, "&");
 //}
 
   
